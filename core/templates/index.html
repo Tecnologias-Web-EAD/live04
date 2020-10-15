@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Início
+{% endblock %}
+
+{% block conteudo %}
+    <h1>Catálogo de Cursos da Impacta</h1>
+
+    <div class="list-group">
+        {% for curso in cursos %}
+        <a href="{% url 'curso_detalhes' curso.etiqueta %}" class="list-group-item list-group-item-action">
+            {{ curso }}
+        </a>
+        {% empty %}
+        <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">
+            Lista de Cursos vazia!
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}
