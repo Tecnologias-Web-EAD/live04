@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block titulo %} {{ curso.nome }} {% endblock %}
+
+
+{% block conteudo %} 
+    <h1> {{ curso }} </h1>
+
+    <p>
+        {{ curso.descricao }}
+    </p>
+
+    <p>
+        <strong>Duração</strong>: {{ curso.duracao }} semestres
+    </p>
+{% endblock %}
